@@ -22,7 +22,7 @@ All line breaks are in the form "\r\n".
 - You can use HTML & JS only, no PHP.
 - You can use HTML entities to replace any characters.
 - The decompression must be performed entirely in the browser, without any user input, and use a reasonable amount of time (<30 min) and memory (<4GB) on a modern computer.
-- You CAN use gzip (or concurrent) compression algorithms, different charsets than UTF-8, binary packing, neural network, ...
+- You CAN use gzip (or concurrent) compression algorithms, other charsets than UTF-8, binary packing, neural network...
 - You can NOT perform network queries or read any file that's not present in your folder.
 - You can NOT use any browser extension, or the built-in spellchecker.
 - Your score is the total size, in bytes, of the file(s) present in your folder.
