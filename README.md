@@ -5,12 +5,13 @@ Welcome!
 
 This is a compression challenge for Web developers.
 
-The goal is to compress the following text: [ws.txt](http://xem.github.io/miniBook/example/index.html),
-containing the complete work of William Shakespeare,
+The goal is to compress the following text: [ws.txt](http://xem.github.io/miniBook/example/index.html),<br>
+containing the complete work of William Shakespeare,<br>
 based on the version hosted on [Project Gutenberg](http://www.gutenberg.org/ebooks/100).
 
-This text is encoded in UTF-8 and has a size of 5,444,554 bytes (5,444,045 characters).
-All line breaks are in the form "\r\n".
+This text is encoded in UTF-8 and has a size of 5,444,554 bytes.<br>
+All line breaks are in the form "\r\n".<br>
+All characters are in ASCII.
 
 **Rules**
 
