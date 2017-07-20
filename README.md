@@ -5,7 +5,7 @@ Welcome!
 
 This is a compression challenge for Web developers.
 
-The goal is to compress the following text: [ws.txt](http://xem.github.io/miniBook/ws.txt),
+The goal is to compress the following text: [ws.txt](http://xem.github.io/miniBook/example/index.html),
 containing the complete work of William Shakespeare,
 based on the version hosted on [Project Gutenberg](http://www.gutenberg.org/ebooks/100).
 
