@@ -15,7 +15,7 @@ All characters are in ASCII.
 
 **Rules**
 
-- Fork this repo
+- Fork this repo.
 - Copy the "example" folder and rename the copy with your Github username.
 - Your folder contains a file called index.html, containing a &lt;xmp> HTML tag followed by all the content of ws.txt.
 - You can create other text and/or binary files at your convenience.
@@ -27,6 +27,7 @@ All characters are in ASCII.
 - You can NOT perform network queries or read any file that's not present in your folder.
 - You can NOT use any browser extension, or the built-in spellchecker.
 - Your score is the total size, in bytes, of the file(s) present in your folder.
+- Open a merge request to appear in the leaderboard.
 
 **Leaderboard**
 
