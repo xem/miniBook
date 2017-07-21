@@ -13,6 +13,8 @@ All means are allowed to compress the file, but the decompression must happen en
 The page is encoded in UTF-8 with BOM and has a size of 5,324,821 bytes.<br>
 All characters are ASCII. (````\n !"&'(),-.0123456789:;<>?ABCDEFGHIJKLMNOPQRSTUVWXYZ[]_abcdefghijklmnopqrstuvwxyz|}````)
 
+More info on on [ANALYSIS.md](https://github.com/xem/miniBook/blob/gh-pages/ANALYSIS.md)
+
 **Rules**
 
 - Fork this repo.
@@ -34,3 +36,7 @@ All characters are ASCII. (````\n !"&'(),-.0123456789:;<>?ABCDEFGHIJKLMNOPQRSTUV
 **Leaderboard**
 
 (soon!)
+
+
+**Analysis**
+
