@@ -3,6 +3,7 @@ Text Analysis
 
 **Character frequency:**
 
+````
 ".": 5205587
 " ": 1266627
 "e": 403878
@@ -86,9 +87,11 @@ Text Analysis
 "&": 21
 "}": 2
 ">": 1
+````
 
 **Word frequency (only words that appear more than once):**
 
+````
 "adders": 5
 "stalls": 4
 "speak": 994
@@ -18234,4 +18237,5 @@ Text Analysis
 "ston": 2
 "assisted": 2
 "remained": 2
-"levelled": 2]]
+"levelled": 2
+````
