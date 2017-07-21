@@ -10,9 +10,8 @@ based on the version hosted on [Project Gutenberg](http://www.gutenberg.org/eboo
 
 All means are allowed to compress the file, but the decompression must happen entirely in the browser.
 
-The page is encoded in UTF-8 with BOM and has a size of 5,444,052 bytes.<br>
-All line breaks are in the form "\r\n".<br>
-All characters are ASCII. (````\n\r !"&'(),-.0123456789:;<>?ABCDEFGHIJKLMNOPQRSTUVWXYZ[]_abcdefghijklmnopqrstuvwxyz|}````)
+The page is encoded in UTF-8 with BOM and has a size of 5,324,821 bytes.<br>
+All characters are ASCII. (````\n !"&'(),-.0123456789:;<>?ABCDEFGHIJKLMNOPQRSTUVWXYZ[]_abcdefghijklmnopqrstuvwxyz|}````)
 
 **Rules**
 
