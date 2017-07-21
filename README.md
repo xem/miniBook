@@ -5,7 +5,8 @@ Welcome!
 
 This is a compression challenge for Web developers.
 
-The goal is to compress [this HTML page](http://xem.github.io/miniBook/example/index.html) containing the complete work of William Shakespeare, based on the version hosted on [Project Gutenberg](http://www.gutenberg.org/ebooks/100).
+The goal is to compress [this HTML page](http://xem.github.io/miniBook/example/index.html) containing the complete work of William Shakespeare,<br>
+based on the version hosted on [Project Gutenberg](http://www.gutenberg.org/ebooks/100).
 
 All means are allowed to compress the file, but the decompression must happen entirely in the browser.
 
@@ -22,7 +23,7 @@ All characters are ASCII. (````\n\r !"&'(),-.0123456789:;<>?ABCDEFGHIJKLMNOPQRST
 - Compress the file as much as you can without altering the output.
 - You can use HTML & JavaScript only, no PHP (or any server-side language), no VBScript.
 - You can use HTML entities to replace any characters.
-- The decompression must be performed entirely in the browser, without any user input, and use a reasonable amount of time (<30 min) and memory (<4GB) on a modern computer.
+- The decompression must be happen in the browser, without any user input, and use a reasonable amount of time (<30 min) and memory (<4GB) on a modern computer.
 - You CAN use gzip (or concurrent) compression algorithms, other charsets than UTF-8, binary packing, neural network...
 - You CAN use temporary elements (text, canvas...), but need to remove them from the DOM afterwards.
 - You can NOT perform network queries or read any file that's not present in your folder.
