@@ -36,7 +36,3 @@ More info on on [ANALYSIS.md](https://github.com/xem/miniBook/blob/gh-pages/ANAL
 **Leaderboard**
 
 (soon!)
-
-
-**Analysis**
-
