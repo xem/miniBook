@@ -1,3 +1,12 @@
+Compression tests
+===
+
+- uncompressed: 5201kb
+- zip + zopfli : 1844kb
+- rar: 1629kb
+- bzip: 1430kb
+
+
 Text Analysis
 ===
 
