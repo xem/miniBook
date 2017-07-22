@@ -10,6 +10,16 @@ Compression tests
 Text Analysis
 ===
 
+**Typos**
+
+- 1289 punctuation marks (.!?) are not followed by a capitalized letter (but 90590 are).
+- A parenthesis is closed by a bracket (l.78316): ````Dance. Exeunt (all but Don John, Borachio, and Claudio].````. It's probably a typo.
+- The two occurrences of "}" also look like typos (l.75165): ````  MRS. FORD. } Away, away.```` , ````  MRS. PAGE. } Away, away.```` 
+````
+
+
+
+
 **Character frequency:**
 
 ````
