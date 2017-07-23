@@ -35,4 +35,4 @@ More info on on [ANALYSIS.md](https://github.com/xem/miniBook/blob/gh-pages/ANAL
 
 **Leaderboard**
 
-(soon!)
+- winstonewert: 1 971 890 bytes (using PNG bootstrap) [demo](http://xem.github.io/miniBook/winstonewert/index.html) [readme](https://github.com/xem/miniBook/blob/gh-pages/winstonewert/README.md)
