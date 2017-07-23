@@ -4,6 +4,7 @@ Compression tests
 - uncompressed: 5201kb
 - zip + zopfli : 1844kb
 - rar: 1629kb
+- 7z: 1513kb
 - bzip: 1430kb
 
 
