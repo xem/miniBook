@@ -6,6 +6,7 @@ Compression tests
 - rar: 1629kb
 - 7z: 1513kb
 - bzip: 1430kb
+- paq8hp12: 1035kb, according to [HN](https://news.ycombinator.com/item?id=14825226)
 
 
 Text Analysis
