@@ -1,11 +1,12 @@
 var fs = require('fs');
 
+var N = 0xffff;
+
 // LZW-compress a string
 function lzw_encode(s) {
     var dict = {};
     var data = (s + "").split("");
     var out = [];
-    var currChar;
     var phrase = data[0];
     var code = 256;
     for (var i=1; i<data.length; i++) {
@@ -17,6 +18,13 @@ function lzw_encode(s) {
             out.push(phrase.length > 1 ? dict[phrase] : phrase.charCodeAt(0));
             dict[phrase + currChar] = code;
             code++;
+            if (code === 0xd800) {
+                code += 0x800;
+            }
+            if (code >= N) {
+                dict = {};
+                code = 256;
+            }
             phrase=currChar;
         }
     }
@@ -48,20 +56,29 @@ function lzw_decode(s) {
         currChar = phrase.charAt(0);
         dict[code] = oldPhrase + currChar;
         code++;
+        if (code === 0xd800) {
+            code += 0x800;
+        }
+        if (code >= N) {
+            dict = {};
+            code = 256;
+        }
         oldPhrase = phrase;
     }
     return out.join("");
 }
 
-fs.readFile('../example/index.html', 'utf8', function (err, data) {
+fs.readFile('../example/index.html', 'utf8', function (err, data1) {
     if (err) throw err;
-    fs.writeFile ('all.html', lzw_encode(data), function(err) {
+    var data2 = lzw_encode(data1);
+    fs.writeFile ('all.html', data2, function(err) {
         if (err) throw err;
-        fs.readFile('all.html', 'utf8', function (err, data) {
+        fs.readFile('all.html', 'utf8', function (err, data3) {
             if (err) throw err;
-            fs.writeFile ('recovered.html', lzw_decode(data), function(err) {
+            var data4 = lzw_decode(data3);
+            fs.writeFile ('recovered.html', data4, function(err) {
                 if (err) throw err;
-                console.log('complete');
+                console.log(data1 === data4 ? 'match' : 'no match');
             });
         });
     });
