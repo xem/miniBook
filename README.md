@@ -28,7 +28,8 @@ More info on on [ANALYSIS.md](https://github.com/xem/miniBook/blob/gh-pages/ANAL
 - You CAN use gzip (or concurrent) compression algorithms, other charsets than UTF-8, binary packing, neural network...
 - You CAN use temporary elements (text, canvas...), but need to hide them or remove them from the DOM at the end.
 - You can NOT perform network queries or read any file that's not present in your folder.
-- You can NOT use any browser extension, or the built-in spellchecker.
+- You can NOT use browser extensions, JS error messages, or the built-in spellchecker.
+- You can NOT store data in file names, HTTP headers or anything that wouldn't appear in the byte count.
 - Your score is the total size, in bytes, of the file(s) present in your folder.
 - Add a readme file explaining your process.
 - Open a merge request to appear in the leaderboard.
