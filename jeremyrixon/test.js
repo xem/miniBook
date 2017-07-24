@@ -1,6 +1,9 @@
 var fs = require('fs');
 
-var N = 0xffff;
+var MINCDE = 0x0080;
+var SKPFRM = 0xd800;
+var SKIPTO = 0xe000;
+var MAXCDE = 0xffff;
 
 // LZW-compress a string
 function lzw_encode(s) {
@@ -8,7 +11,7 @@ function lzw_encode(s) {
     var data = (s + "").split("");
     var out = [];
     var phrase = data[0];
-    var code = 256;
+    var code = MINCDE;
     for (var i=1; i<data.length; i++) {
         currChar=data[i];
         if (dict[phrase + currChar] != null) {
@@ -18,12 +21,12 @@ function lzw_encode(s) {
             out.push(phrase.length > 1 ? dict[phrase] : phrase.charCodeAt(0));
             dict[phrase + currChar] = code;
             code++;
-            if (code === 0xd800) {
-                code += 0x800;
+            if (code === SKPFRM) {
+                code = SKIPTO;
             }
-            if (code >= N) {
+            if (code >= MAXCDE) {
                 dict = {};
-                code = 256;
+                code = MINCDE;
             }
             phrase=currChar;
         }
@@ -42,11 +45,11 @@ function lzw_decode(s) {
     var currChar = data[0];
     var oldPhrase = currChar;
     var out = [currChar];
-    var code = 256;
+    var code = MINCDE;
     var phrase;
     for (var i=1; i<data.length; i++) {
         var currCode = data[i].charCodeAt(0);
-        if (currCode < 256) {
+        if (currCode < MINCDE) {
             phrase = data[i];
         }
         else {
@@ -56,19 +59,19 @@ function lzw_decode(s) {
         currChar = phrase.charAt(0);
         dict[code] = oldPhrase + currChar;
         code++;
-        if (code === 0xd800) {
-            code += 0x800;
+        if (code === SKPFRM) {
+            code = SKIPTO;
         }
-        if (code >= N) {
+        if (code >= MAXCDE) {
             dict = {};
-            code = 256;
+            code = MINCDE;
         }
         oldPhrase = phrase;
     }
     return out.join("");
 }
 
-fs.readFile('../example/index.html', 'utf8', function (err, data1) {
+fs.readFile('index.html', 'utf8', function (err, data1) {
     if (err) throw err;
     var data2 = lzw_encode(data1);
     fs.writeFile ('all.html', data2, function(err) {
