@@ -34,6 +34,11 @@ More info on on [ANALYSIS.md](https://github.com/xem/miniBook/blob/gh-pages/ANAL
 - Add a readme file explaining your process.
 - Open a merge request to appear in the leaderboard.
 
+**Reward**
+
+- A first reward of 50€ (via Paypal) will be granted to the first person that beats 1050kb (i.e. 15kb bigger than paq8hp12's score for this file) 
+- Then, a reward of 10 + X€ will be granted to each person that beats the previous record by Xkb.
+
 **Leaderboard**
 
 - winstonewert: 1 971 890 bytes (using PNG bootstrap) [demo](http://xem.github.io/miniBook/winstonewert/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/winstonewert/README.md)
