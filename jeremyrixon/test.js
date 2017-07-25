@@ -13,12 +13,12 @@ function lzw_encode(s) {
     var phrase = data[0];
     var code = MINCDE;
     for (var i=1; i<data.length; i++) {
-        currChar=data[i];
+        var currChar=data[i];
         if (dict[phrase + currChar] != null) {
             phrase += currChar;
         }
         else {
-            out.push(phrase.length > 1 ? dict[phrase] : phrase.charCodeAt(0));
+            out.push(phrase.length > 1 ? dict[phrase] : phrase.codePointAt(0));
             dict[phrase + currChar] = code;
             code++;
             if (code === SKPFRM) {
@@ -31,9 +31,9 @@ function lzw_encode(s) {
             phrase=currChar;
         }
     }
-    out.push(phrase.length > 1 ? dict[phrase] : phrase.charCodeAt(0));
+    out.push(phrase.length > 1 ? dict[phrase] : phrase.codePointAt(0));
     for (var i=0; i<out.length; i++) {
-        out[i] = String.fromCharCode(out[i]);
+        out[i] = String.fromCodePoint(out[i]);
     }
     return out.join("");
 }
@@ -48,7 +48,7 @@ function lzw_decode(s) {
     var code = MINCDE;
     var phrase;
     for (var i=1; i<data.length; i++) {
-        var currCode = data[i].charCodeAt(0);
+        var currCode = data[i].codePointAt(0);
         if (currCode < MINCDE) {
             phrase = data[i];
         }
