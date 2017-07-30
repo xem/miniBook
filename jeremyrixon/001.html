@@ -1,0 +1,73 @@
+﻿<body>
+    <xmp id="x"></xmp>
+    <script>
+        var MINCDE = 0x00080;
+        var SKPFRM = 0x0d800;
+        var SKIPTO = 0x0e000;
+        var MAXCDE = 0xfffff;
+
+        // LZW-compress a string
+        function lzw_encode(s) {
+            var dict = {};
+            var out = "";
+            var phrase = s.charAt(0);
+            var code = MINCDE;
+            for (var i=1; i<s.length; i++) {
+                var currChar=s.charAt(i);
+                if (dict[phrase + currChar] != null) {
+                    phrase += currChar;
+                } else {
+                    out += phrase.length > 1 ? String.fromCodePoint(dict[phrase]) : phrase.charAt(0);
+                    dict[phrase + currChar] = code;
+                    code++;
+                    if (code === SKPFRM) {
+                        code = SKIPTO;
+                    }
+                    if (code === MAXCDE) {
+                        dict = {};
+                        code = MINCDE;
+                    }
+                    phrase=currChar;
+                }
+            }
+            out += phrase.length > 1 ? String.fromCodePoint(dict[phrase]) : phrase.charAt(0);
+            return out;
+        }
+
+        // Decompress an LZW-encoded string
+        function lzw_decode(s) {
+            var dict = {};
+            var currChar = s.charAt(0);
+            var oldPhrase = currChar;
+            var out = currChar;
+            var code = MINCDE;
+            var phrase;
+            for (var i=1; i<s.length; i++) {
+                var currCode = s.codePointAt(i);
+                if (currCode > 0xffff) {
+                    i++;
+                }
+                if (currCode < MINCDE) {
+                    phrase = String.fromCodePoint(currCode);
+                }
+                else {
+                    phrase = dict[currCode] ? dict[currCode] : (oldPhrase + currChar);
+                }
+                out += phrase;
+                currChar = phrase.charAt(0);
+                dict[code] = oldPhrase + currChar;
+                code++;
+                if (code === SKPFRM) {
+                    code = SKIPTO;
+                }
+                if (code === MAXCDE) {
+                    dict = {};
+                    code = MINCDE;
+                }
+                oldPhrase = phrase;
+            }
+            return out;
+        }
+
+        x = document.getElementById('x');
+        x.innerHTML=lzw_decode(`

@@ -1,9 +1,9 @@
 var fs = require('fs');
 
-var MINCDE = 0x0080;
-var SKPFRM = 0xd800;
-var SKIPTO = 0xe000;
-var MAXCDE = 0xffff;
+var MINCDE = 0x00080;
+var SKPFRM = 0x0d800;
+var SKIPTO = 0x0e000;
+var MAXCDE = 0xfffff;
 
 // LZW-compress a string
 function lzw_encode(s) {
@@ -22,7 +22,7 @@ function lzw_encode(s) {
             if (code === SKPFRM) {
                 code = SKIPTO;
             }
-            if (code >= MAXCDE) {
+            if (code === MAXCDE) {
                 dict = {};
                 code = MINCDE;
             }
@@ -38,79 +38,47 @@ function lzw_decode(s) {
     var dict = {};
     var currChar = s.charAt(0);
     var oldPhrase = currChar;
-    var out = [currChar];
+    var out = currChar;
     var code = MINCDE;
     var phrase;
     for (var i=1; i<s.length; i++) {
         var currCode = s.codePointAt(i);
+        if (currCode > 0xffff) {
+            i++;
+        }
         if (currCode < MINCDE) {
             phrase = String.fromCodePoint(currCode);
         }
         else {
             phrase = dict[currCode] ? dict[currCode] : (oldPhrase + currChar);
         }
-        out.push(phrase);
+        out += phrase;
         currChar = phrase.charAt(0);
         dict[code] = oldPhrase + currChar;
         code++;
         if (code === SKPFRM) {
             code = SKIPTO;
         }
-        if (code >= MAXCDE) {
+        if (code === MAXCDE) {
             dict = {};
             code = MINCDE;
         }
         oldPhrase = phrase;
     }
-    return out.join("");
+    return out;
 }
 
-/*
-function lzw_decode(s) {
-    var dict = {};
-    var data = (s + "").split("");
-    var currChar = data[0];
-    var oldPhrase = currChar;
-    var out = [currChar];
-    var code = MINCDE;
-    var phrase;
-    for (var i=1; i<data.length; i++) {
-        var currCode = data[i].codePointAt(0);
-        if (currCode < MINCDE) {
-            phrase = data[i];
-        }
-        else {
-            phrase = dict[currCode] ? dict[currCode] : (oldPhrase + currChar);
-        }
-        out.push(phrase);
-        currChar = phrase.charAt(0);
-        dict[code] = oldPhrase + currChar;
-        code++;
-        if (code === SKPFRM) {
-            code = SKIPTO;
-        }
-        if (code >= MAXCDE) {
-            dict = {};
-            code = MINCDE;
-        }
-        oldPhrase = phrase;
-    }
-    return out.join("");
-}
-
- */
-
-
-fs.readFile('index.html', 'utf8', function (err, data1) {
+fs.readFile('input.html', 'utf8', function (err, data1) {
     if (err) throw err;
     var data2 = lzw_encode(data1);
-    fs.writeFile ('all.html', data2, function(err) {
+    fs.writeFile ('002.html', data2, function(err) {
         if (err) throw err;
-        fs.readFile('all.html', 'utf8', function (err, data3) {
+        fs.readFile('002.html', 'utf8', function (err, data3) {
             if (err) throw err;
             var data4 = lzw_decode(data3);
             fs.writeFile ('recovered.html', data4, function(err) {
                 if (err) throw err;
+                console.log((data4.substring(0, 30) + '...' + data4.substring(data4.length-30)).replace(/\s+/g, ' '));
                 console.log(data1 === data4 ? 'match' : 'no match');
             });
         });
