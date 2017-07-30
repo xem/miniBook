@@ -8,17 +8,15 @@ var MAXCDE = 0xffff;
 // LZW-compress a string
 function lzw_encode(s) {
     var dict = {};
-    var data = (s + "").split("");
-    var out = [];
-    var phrase = data[0];
+    var out = "";
+    var phrase = s.charAt(0);
     var code = MINCDE;
-    for (var i=1; i<data.length; i++) {
-        var currChar=data[i];
+    for (var i=1; i<s.length; i++) {
+        var currChar=s.charAt(i);
         if (dict[phrase + currChar] != null) {
             phrase += currChar;
-        }
-        else {
-            out.push(phrase.length > 1 ? dict[phrase] : phrase.codePointAt(0));
+        } else {
+            out += phrase.length > 1 ? String.fromCodePoint(dict[phrase]) : phrase.charAt(0);
             dict[phrase + currChar] = code;
             code++;
             if (code === SKPFRM) {
@@ -31,11 +29,8 @@ function lzw_encode(s) {
             phrase=currChar;
         }
     }
-    out.push(phrase.length > 1 ? dict[phrase] : phrase.codePointAt(0));
-    for (var i=0; i<out.length; i++) {
-        out[i] = String.fromCodePoint(out[i]);
-    }
-    return out.join("");
+    out += phrase.length > 1 ? String.fromCodePoint(dict[phrase]) : phrase.charAt(0);
+    return out;
 }
 
 // Decompress an LZW-encoded string
