@@ -1,3 +1,4 @@
+// Based on https://gist.github.com/revolunet/843889
 var fs = require('fs');
 
 var MINCDE = 0x00080;
