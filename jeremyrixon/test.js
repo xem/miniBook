@@ -36,6 +36,38 @@ function lzw_encode(s) {
 // Decompress an LZW-encoded string
 function lzw_decode(s) {
     var dict = {};
+    var currChar = s.charAt(0);
+    var oldPhrase = currChar;
+    var out = [currChar];
+    var code = MINCDE;
+    var phrase;
+    for (var i=1; i<s.length; i++) {
+        var currCode = s.codePointAt(i);
+        if (currCode < MINCDE) {
+            phrase = String.fromCodePoint(currCode);
+        }
+        else {
+            phrase = dict[currCode] ? dict[currCode] : (oldPhrase + currChar);
+        }
+        out.push(phrase);
+        currChar = phrase.charAt(0);
+        dict[code] = oldPhrase + currChar;
+        code++;
+        if (code === SKPFRM) {
+            code = SKIPTO;
+        }
+        if (code >= MAXCDE) {
+            dict = {};
+            code = MINCDE;
+        }
+        oldPhrase = phrase;
+    }
+    return out.join("");
+}
+
+/*
+function lzw_decode(s) {
+    var dict = {};
     var data = (s + "").split("");
     var currChar = data[0];
     var oldPhrase = currChar;
@@ -65,6 +97,9 @@ function lzw_decode(s) {
     }
     return out.join("");
 }
+
+ */
+
 
 fs.readFile('index.html', 'utf8', function (err, data1) {
     if (err) throw err;
