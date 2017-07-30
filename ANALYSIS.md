@@ -4,7 +4,11 @@ Compression tests
 - uncompressed: 5201kb
 - zip + zopfli : 1844kb
 - rar: 1629kb
-- bzip: 1430kb
+- 7z: 1513kb
+- bzip: 1426kb
+- BCM: 1191kb
+- paq8px: 1085kb
+- paq8hp12: 1035kb, according to [HN](https://news.ycombinator.com/item?id=14825226)
 
 
 Text Analysis
