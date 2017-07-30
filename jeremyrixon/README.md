@@ -13,7 +13,7 @@ Things to note:
 * The index.html file is UTF-8 encoded but the javascript will see the string as UTF-16 encoded because the browser's javascript interpreter has already parsed the content of the script tag.
 * Unicode codepoints 0x0d800 to 0x0dfff are invalid (on their own) and so must be skipped when using codepoints as LZW dictionary codes.
 * The javascript LZW code is based on this gist: https://gist.github.com/revolunet/843889
-
+~~~
     // Based on https://gist.github.com/revolunet/843889
     var fs = require('fs');
 
@@ -102,4 +102,4 @@ Things to note:
         });
 
     });
-
+~~~
