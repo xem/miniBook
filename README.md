@@ -41,7 +41,7 @@ More info on on [ANALYSIS.md](https://github.com/xem/miniBook/blob/gh-pages/ANAL
 
 **Leaderboard**
 
-- Eyal Gruss: 1 380 233 bytes (using [ZTML](https://github.com/eyaler/ztml) with crEnc) [demo](http://xem.github.io/miniBook/eyaler/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/eyaler/README.md)
+- Eyal Gruss: 1 356 386 bytes (using text preprocessing + Burrows-Wheeler + Move-to-front variant + Huffman + Burrows-Wheeler on bits + ECT PNG bootstrap + crEnc) [demo](http://xem.github.io/miniBook/eyaler/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/eyaler/README.md)
 - Matt Mastrac: 1 488 397 bytes (using better PNG bootstrap) [demo](http://xem.github.io/miniBook/mmastrac/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/mmastrac/README.md)
 - winstonewert: 1 971 890 bytes (using PNG bootstrap) [demo](http://xem.github.io/miniBook/winstonewert/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/winstonewert/README.md)
 - jeremyrixon: 2 961 629 bytes (using Unicode and LZW) [demo](http://xem.github.io/miniBook/jeremyrixon/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/jeremyrixon/README.md)
