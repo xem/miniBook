@@ -36,12 +36,13 @@ More info on on [ANALYSIS.md](https://github.com/xem/miniBook/blob/gh-pages/ANAL
 
 **Reward**
 
-- A first reward of 50€ (via Paypal) will be granted to the first person that beats 1050kb (i.e. 15kb bigger than paq8hp12's score for this file) 
+- A first reward of 50€ (via Paypal) will be granted to the first person that beats 1 170 000 bytes
 - Then, a reward of 10 + X€ will be granted to each person that beats the previous record by Xkb.
 
 **Leaderboard**
 
-- Eyal Gruss: 1 356 386 bytes (using text preprocessing + Burrows-Wheeler + Move-to-front variant + Huffman + Burrows-Wheeler on bits + ECT PNG bootstrap + crEnc) [demo](http://xem.github.io/miniBook/eyaler/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/eyaler/README.md)
-- Matt Mastrac: 1 488 397 bytes (using better PNG bootstrap) [demo](http://xem.github.io/miniBook/mmastrac/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/mmastrac/README.md)
-- winstonewert: 1 971 890 bytes (using PNG bootstrap) [demo](http://xem.github.io/miniBook/winstonewert/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/winstonewert/README.md)
-- jeremyrixon: 2 961 629 bytes (using Unicode and LZW) [demo](http://xem.github.io/miniBook/jeremyrixon/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/jeremyrixon/README.md)
+- 1- Konstantin Zaborskikh 1 199 249 bytes (context mixing combined with a simple dictionary-based preprocessor for English text [demo](http://xem.github.io/miniBook/Konstantin%20Zaborskikh/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/Konstantin%20Zaborskikh/README.md)
+- 2- Eyal Gruss: 1 356 386 bytes (using text preprocessing + Burrows-Wheeler + Move-to-front variant + Huffman + Burrows-Wheeler on bits + ECT PNG bootstrap + crEnc) [demo](http://xem.github.io/miniBook/eyaler/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/eyaler/README.md)
+- 3- Matt Mastrac: 1 488 397 bytes (using better PNG bootstrap) [demo](http://xem.github.io/miniBook/mmastrac/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/mmastrac/README.md)
+- 4- winstonewert: 1 971 890 bytes (using PNG bootstrap) [demo](http://xem.github.io/miniBook/winstonewert/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/winstonewert/README.md)
+- 5- jeremyrixon: 2 961 629 bytes (using Unicode and LZW) [demo](http://xem.github.io/miniBook/jeremyrixon/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/jeremyrixon/README.md)
