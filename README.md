@@ -18,31 +18,30 @@ More info on on [ANALYSIS.md](https://github.com/xem/miniBook/blob/gh-pages/ANAL
 **Rules**
 
 - Fork this repo.
-- Copy the "example" folder and rename the copy with your Github username.
-- Your folder contains a file called index.html, containing a &lt;xmp> HTML tag followed by a long text.
-- You can create other text and/or binary files at your convenience.
+- Copy the "example" folder and rename the copy with the current date + your Github username.
+- Your folder must contain a file called index.html, displaying the same content than the example file (a &lt;xmp> HTML tag followed by a long text).
 - Compress the file as much as you can without altering the output.
-- The decompression must happen in the browser, without any user input, and use a reasonable amount of time (<30 min) and memory (<4GB) on a modern computer.
-- You can use HTML & JavaScript only, no PHP (or any server-side language), no VBScript.
-- You CAN use HTML entities to replace any characters.
-- You CAN use gzip (or concurrent) compression algorithms, other charsets than UTF-8, binary packing, neural networks...
-- You CAN use temporary elements (text, canvas...), but need to hide them or remove them from the DOM at the end.
-- You can NOT perform network queries or read any file that's not present in your folder.
-- You can NOT use browser extensions, JS error messages, or the built-in spellchecker.
-- You can NOT store data in file names, HTTP headers or anything that wouldn't appear in the byte count.
+- You MUST use HTML & JavaScript only for the decoder.
+- You CAN create other text and/or binary files at your convenience.
+- The decompression must happen in the browser, without any user input, and use a reasonable amount of time (<60 min) and memory (<6GB) on a modern computer.
+- You CAN replace characters with HTML entities.
+- You CAN use different charsets than UTF-8.
+- You CAN use temporary elements (text, canvas...), but you need to hide them or remove them from the DOM after decompression.
+- You CAN NOT perform network queries or read any file that's not present in your folder.
+- You CAN NOT gather data from browser extensions, text-to-speech API, I18n API, Spellchack API, browser/JS error messages, file names, HTTP headers, etc. (non-exhaustive list but you get the idea.)
 - Your score is the total size, in bytes, of the file(s) present in your folder.
-- Add a readme file explaining your process.
-- Open a merge request to appear in the leaderboard.
+- You MUST provide a README file explaining your process, as well as the tools used and the uncompressed source code of your decoder/decompressor (these files size don't count in your score)
+- If you break the currect record, please open a merge request to appear in the leaderboard.
 
 **Reward**
 
 - A first reward of 50€ (via Paypal) will be granted to the first person that beats 1 170 000 bytes
-- Then, a reward of 10 + X€ will be granted to each person that beats the previous record by Xkb.
+- Then, a reward of math.ceil(X) € will be granted to each person that beats the previous record by X kb. 
 
 **Leaderboard**
 
-- 1- Konstantin Zaborskikh 1 199 249 bytes (context mixing combined with a simple dictionary-based preprocessor for English text [demo](http://xem.github.io/miniBook/Konstantin%20Zaborskikh/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/Konstantin%20Zaborskikh/README.md)
-- 2- Eyal Gruss: 1 356 386 bytes (using text preprocessing + Burrows-Wheeler + Move-to-front variant + Huffman + Burrows-Wheeler on bits + ECT PNG bootstrap + crEnc) [demo](http://xem.github.io/miniBook/eyaler/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/eyaler/README.md)
-- 3- Matt Mastrac: 1 488 397 bytes (using better PNG bootstrap) [demo](http://xem.github.io/miniBook/mmastrac/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/mmastrac/README.md)
-- 4- winstonewert: 1 971 890 bytes (using PNG bootstrap) [demo](http://xem.github.io/miniBook/winstonewert/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/winstonewert/README.md)
-- 5- jeremyrixon: 2 961 629 bytes (using Unicode and LZW) [demo](http://xem.github.io/miniBook/jeremyrixon/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/jeremyrixon/README.md)
+- 1- Konstantin Zaborskikh 1 199 249 bytes (context mixing combined with a simple dictionary-based preprocessor for English text [demo](http://xem.github.io/miniBook/2026-07-19%20Konstantin%20Zaborskikh/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/2026-07-19%20Konstantin%20Zaborskikh/README.md)
+- 2- Eyal Gruss: 1 356 386 bytes (using text preprocessing + Burrows-Wheeler + Move-to-front variant + Huffman + Burrows-Wheeler on bits + ECT PNG bootstrap + crEnc) [demo](http://xem.github.io/miniBook/2022-11-02%20eyaler/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/2022-11-02%20eyaler/README.md)
+- 3- Matt Mastrac: 1 488 397 bytes (using better PNG bootstrap) [demo](http://xem.github.io/miniBook/2017-10-06%20mmastrac/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/2017-10-06%20mmastrac/README.md)
+- 4- winstonewert: 1 971 890 bytes (using PNG bootstrap) [demo](http://xem.github.io/miniBook/2017-07-23%20winstonewert/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/2017-07-23%20winstonewert/README.md)
+- 5- jeremyrixon: 2 961 629 bytes (using Unicode and LZW) [demo](http://xem.github.io/miniBook/2017-07-30%20eremyrixon/index.html), [readme](https://github.com/xem/miniBook/blob/gh-pages/2017-07-30%20jeremyrixon/README.md)
